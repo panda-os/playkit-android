@@ -12,7 +12,6 @@ import android.view.SurfaceHolder;
 
 import com.kaltura.playkit.PKLog;
 import com.kaltura.playkit.PKMediaSource;
-import com.kaltura.playkit.PKTracks;
 import com.kaltura.playkit.PlaybackParamsInfo;
 import com.kaltura.playkit.PlayerEvent;
 import com.kaltura.playkit.PlayerState;
@@ -355,6 +354,11 @@ public class MediaPlayerWrapper implements PlayerEngine,  SurfaceHolder.Callback
 
     @Override
     public PlaybackParamsInfo getPlaybackParamsInfo() {
+        return null;
+    }
+
+    @Override
+    public PlayerEvent.ExceptionInfo getCurrentException() {
         return null;
     }
 

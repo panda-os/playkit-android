@@ -162,8 +162,8 @@ public class PlayerController implements Player {
         } else {
            if (player == null) {
                player = new MediaPlayerWrapper(context);
-               wrapperView.addView(player.getView());
-
+               rootPlayerView.addView(player.getView());
+               togglePlayerListeners(true);
            }
         }
 
