@@ -236,7 +236,11 @@ public class MediaPlayerWrapper implements PlayerEngine,  SurfaceHolder.Callback
             mPlayheadTracker = new PlayheadTracker();
         }
         mPlayheadTracker.start();
-        sendDistinctEvent(PlayerEvent.Type.PLAYING);
+        if (previousState.equals(PlayerState.READY)) {
+            sendDistinctEvent(PlayerEvent.Type.PLAYING);
+        }
+        sendDistinctEvent(PlayerEvent.Type.PLAY);
+
 
 
     }
@@ -429,7 +433,6 @@ public class MediaPlayerWrapper implements PlayerEngine,  SurfaceHolder.Callback
         if (newEvent.equals(currentEvent)) {
             return;
         }
-
         sendEvent(newEvent);
     }
 
